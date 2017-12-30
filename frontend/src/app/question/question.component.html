@@ -1,0 +1,7 @@
+<md-card-header>
+  <md-card-title>{{question.question}}</md-card-title>
+</md-card-header>
+<md-card-content>
+  <md-checkbox class="answer" *ngFor="let possibleAnswer of question.possibleAnswers; let i = index" (change)="giveAnswer(i)"
+    [checked]="checkAnswers(i)">{{possibleAnswer.answer}}</md-checkbox>
+</md-card-content>

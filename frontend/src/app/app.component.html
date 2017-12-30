@@ -1,0 +1,24 @@
+<!--The whole content below can be removed with the new code.-->
+<section class="container">
+
+  <md-card class="example-card">
+    <app-progress [parentSubject]="parentSubject"></app-progress>
+
+    <app-board (changeQuestion)="changeQuestion($event)" [questions]="questions"></app-board>
+
+    <br><br>
+    <!--<button md-button>REVIEW QUESTION</button>
+    <button class="next-btn" md-button>QUIZ SUMMARY</button>-->
+    <!--<hr>-->
+    <p>Querstion <strong>{{questionIndex + 1}}</strong> of <strong>{{numberOfQuestions}}</strong></p>
+
+    <app-question *ngIf="question" [question]="question" [questionIndex]="questionIndex" (giveAnswerEvent)="giveAnswer($event)"></app-question>
+
+    <md-card-actions>
+      <button *ngIf="questionIndex > 0" md-button (click)="previousQuestion(questionIndex)">PREVIOUS</button>
+      <button md-button>.</button>
+      <button *ngIf="questionIndex < numberOfQuestions - 1" md-button class="next-btn" (click)="nextQuestion(questionIndex)">NEXT</button>
+      <button *ngIf="questionIndex === numberOfQuestions - 1" md-button class="next-btn" (click)="finishQuiz()">FINISH</button>
+    </md-card-actions>
+  </md-card>
+</section>

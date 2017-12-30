@@ -1,0 +1,6 @@
+<md-grid-list cols="20" rowHeight="1:1">
+  <md-grid-tile *ngFor="let question of questions; let i = index" [ngClass]="{'answered': question.answered, '': !question.answered}"
+    (click)="changeQuestionEvent(i)">
+    <span>{{i + 1}}</span>
+  </md-grid-tile>
+</md-grid-list>

@@ -1,0 +1,14 @@
+md-grid-tile {
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+md-grid-tile:hover {
+	border: 1px solid #673ab7;
+	background-color: whitesmoke;
+}
+
+
+.answered {
+	background-color: #6bca6b
+}
